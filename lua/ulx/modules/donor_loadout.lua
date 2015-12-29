@@ -1,0 +1,1 @@
+ULib.ucl.registerAccess("donorloadout", "Other", "Gives player the donor loadout at spawn.")
