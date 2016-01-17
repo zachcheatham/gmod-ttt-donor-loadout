@@ -32,12 +32,12 @@ local function getAmmoType(class)
 end
 
 local function playerLoadout(ply)
-	if ply:query("donorloadout") then
-		-- Load the weapons if we haven't
-		if not pistols then
-			loadWeapons()
-		end
+	-- Load the weapons if we haven't
+	if not pistols then
+		loadWeapons()
+	end
 
+	if ply:query("donorloadout") then
 		local ammo = {}
 
 		-- Spawn a pistol
@@ -45,7 +45,7 @@ local function playerLoadout(ply)
 		local ammoType, ammoMax = getAmmoType(class)
 		ammo[ammoType] = ammoMax
 		ply:Give(class)
-		
+
 		-- Spawn a primary
 		class = table.Random(primaries)
 		ammoType, ammoMax = getAmmoType(class)
@@ -59,6 +59,10 @@ local function playerLoadout(ply)
 		for ammoType, ammoMax in pairs(ammo) do
 			ply:GiveAmmo(ammoMax, ammoType, true)
 		end
+	else
+		-- Spawn a pistol
+		local class = table.Random(pistols)
+		ply:Give(class)
 	end
 end
 hook.Add("PlayerLoadout", "DonorLoadout", playerLoadout)
