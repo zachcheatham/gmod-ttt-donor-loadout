@@ -37,7 +37,7 @@ local function playerLoadout(ply)
 		loadWeapons()
 	end
 
-	if ply:query("donorloadout") then
+	if (ply.isVIP and ply:isVIP()) or ply:query("donorloadout") then
 		local ammo = {}
 
 		-- Spawn a pistol
