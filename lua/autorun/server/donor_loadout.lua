@@ -59,6 +59,10 @@ local function playerLoadout(ply)
 		for ammoType, ammoMax in pairs(ammo) do
 			ply:GiveAmmo(ammoMax, ammoType, true)
 		end
+
+        -- Set lightsaber
+        ply:StripWeapon("weapon_zm_improvised")
+        ply:Give("weapon_ttt_lightsaber_green")
 	else
 		-- Spawn a pistol
 		local class = table.Random(pistols)
