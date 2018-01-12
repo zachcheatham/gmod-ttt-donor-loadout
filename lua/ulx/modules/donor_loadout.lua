@@ -1,1 +1,2 @@
-ULib.ucl.registerAccess("donorloadout", "Other", "Gives player the donor loadout at spawn.")
+ULib.ucl.registerAccess("donorloadout", _, "Gives player the donor loadout at spawn.", "Supporter Benefits")
+ULib.ucl.registerAccess("superpush", _, "Gives player the donor loadout at spawn.", "Supporter Benefits")
