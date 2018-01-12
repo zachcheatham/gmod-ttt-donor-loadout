@@ -41,7 +41,7 @@ local function playerLoadout(ply)
 		local ammo = {}
 
 		-- Spawn a pistol
-		local class = table.Random(pistols)
+		local class = "weapon_zm_revolver"
 		local ammoType, ammoMax = getAmmoType(class)
 		ammo[ammoType] = ammoMax
 		ply:Give(class)
